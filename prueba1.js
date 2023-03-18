@@ -20,7 +20,7 @@ function imprimir() {
 imprimir();
 borrar("fernando diaz")
 imprimir();
-
+ 
 
 
 

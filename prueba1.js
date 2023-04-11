@@ -40,9 +40,16 @@ function printContacts() {
         console.log("------------------------");
     });
 }
-// Función para añadir un nuevo contacto a la lista
 function addContact(newContact) {
-  contactList.push(newContact);
+    // Busca el id más alto y asigna el siguiente disponible
+    let highestId = 0;
+    contactList.forEach(function (contact) {
+        if (contact.id > highestId) {
+            highestId = contact.id;
+        }
+    });
+    newContact.id = highestId + 1;
+    contactList.push(newContact);
 }
 
 // Función para borrar un contacto existente de la lista
@@ -52,7 +59,21 @@ function deleteContact(id) {
   });
 }
 
+
+let jesus = {
+    nombres: "Jesusito",
+    apellidos: "none",
+    teléfono: "324567",
+    ubicaciones: "desconocida",
+    ciudad: "Desconocida",
+    dirección: "desconocida"
+};
+
+
+console.log(addContact(jesus))
 console.log(printContacts())
+
+
 
  
 

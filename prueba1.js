@@ -16,7 +16,7 @@ let contactList = [
     teléfono: "897655",
     ubicaciones: "Colombia",
     ciudad: "Palmira",
-    dirección: "Carre 45 #9a-87"
+    dirección: "Carrera 45 #9a-87"
     },
     {
         id: 3,
@@ -25,10 +25,21 @@ let contactList = [
         teléfono: "235187",
         ubicaciones: "Colombia",
         ciudad: "Palmira",
-        dirección: "Ccalle 44 #b4-45"
+        dirección: "Calle 44 #b4-45"
     }
 ];
 
+function printContacts() {
+    console.log("Lista de contactos:");
+    contactList.forEach(function (contact, index) {
+        console.log((index + 1) + ". " + contact.nombres + " " + contact.apellidos);
+        console.log("  Teléfono: " + contact.teléfono);
+        console.log("  Ubicación: " + contact.ubicaciones);
+        console.log("  Ciudad: " + contact.ciudad);
+        console.log("  Dirección: " + contact.dirección);
+        console.log("------------------------");
+    });
+}
 // Función para añadir un nuevo contacto a la lista
 function addContact(newContact) {
   contactList.push(newContact);
@@ -40,6 +51,8 @@ function deleteContact(id) {
     return contact.id !== id;
   });
 }
+
+console.log(printContacts())
 
  
 

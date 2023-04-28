@@ -1,4 +1,4 @@
-// Crea una lista de contactos con datos predefinidos
+
 let contactList = [
   {
     id: 1,
@@ -41,7 +41,7 @@ function printContacts() {
     });
 }
 function addContact(newContact) {
-    // Busca el id más alto y asigna el siguiente disponible
+    
     let highestId = 0;
     contactList.forEach(function (contact) {
         if (contact.id > highestId) {
@@ -59,21 +59,37 @@ function deleteContact(id) {
   });
 }
 
+//Bonus
 
-let jesus = {
-    nombres: "Jesusito",
-    apellidos: "none",
-    teléfono: "324567",
-    ubicaciones: "desconocida",
-    ciudad: "Desconocida",
-    dirección: "desconocida"
-};
+function updateContact(id, newData) {
+  let index = -1;
+  for (let i = 0; i < contactList.length; i++) {
+    if (contactList[i].id === id) {
+      index = i;
+      break;
+    }
+  }
+  if (index !== -1) {
+    let contact = contactList[index];
+    contact.nombres = newData.nombres || contact.nombres;
+    contact.apellidos = newData.apellidos || contact.apellidos;
+    contact.teléfono = newData.teléfono || contact.teléfono;
+    contact.ubicaciones = newData.ubicaciones || contact.ubicaciones;
+    contact.ciudad = newData.ciudad || contact.ciudad;
+    contact.dirección = newData.dirección || contact.dirección;
+    console.log("Contacto actualizado ");
+  } else {
+    console.log("El contacto no existe en la lista");
+  }
+}
 
 
-console.log(addContact(jesus))
+
+
 console.log(printContacts())
 
-
+console.log(deleteContact(2));
+console.log(printContacts())
 
  
 

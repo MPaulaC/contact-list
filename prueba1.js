@@ -52,7 +52,7 @@ function addContact(newContact) {
     contactList.push(newContact);
 }
 
-// Función para borrar un contacto existente de la lista
+// Función para borrar un contacto 
 function deleteContact(id) {
   contactList = contactList.filter(function(contact) {
     return contact.id !== id;
